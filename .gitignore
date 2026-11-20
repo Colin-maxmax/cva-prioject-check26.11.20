@@ -11,3 +11,6 @@ Thumbs.db
 # 日志与临时文件
 *.log
 _tmp*
+
+# 旧网站副本（已作废，不属于小程序）
+stroke-ai-backend-main/
