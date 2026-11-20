@@ -1,0 +1,40 @@
+<scroll-view scroll-y class="doc-page">
+  <view class="doc-title">急救指南</view>
+  <view class="doc-meta">内容调整中</view>
+
+  <view class="coming-card">
+    <view class="coming-icon">急</view>
+    <view class="coming-title">该功能即将优化</view>
+    <view class="coming-desc">急救指南板块正在升级调整，后续将提供更完善的内容，敬请期待。</view>
+  </view>
+
+  <view class="coming-tip">如遇紧急情况，请立即拨打 120。</view>
+
+  <!--=========
+       
+
+  <view class="emergency-header">
+    <view class="emergency-badge">急救科普</view>
+    <view class="emergency-title">中风急救指南</view>
+    <view class="emergency-sub">时间就是生命。出现中风症状，立即拨打 120。</view>
+  </view>
+
+  <view class="card">
+    <view class="step-head">
+      <view class="mnemonic-title">“中风120”口诀：出现任意一项，立即启动急救</view>
+    </view>
+    <view class="mnemonic-item">
+      <view class="mnemonic-num">1</view>
+      <view class="mnemonic-body">
+        <view class="mnemonic-name">看一张脸</view>
+        <view class="mnemonic-desc">让患者微笑或龇牙，看口角是否歪斜、面部是否不对称。</view>
+      </view>
+    </view>
+    <view class="mnemonic-item">
+      <view class="mnemonic-num">2</view>
+      【待补：此处原有「查两只胳膊」内容，原文件未保留，恢复时补回】
+    </view>
+    【待补：第 0 步「聆听语言」及其后的急救步骤、注意事项、送医提示】
+  </view>
+  ========== -->
+</scroll-view>

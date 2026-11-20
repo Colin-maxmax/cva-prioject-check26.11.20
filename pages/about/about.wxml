@@ -1,0 +1,20 @@
+<scroll-view scroll-y class="doc-page">
+  <view class="doc-title">关于我们</view>
+  <view class="doc-meta">卒防智控 v1.1.0</view>
+
+  <view class="doc-section">我们做什么</view>
+  <view class="doc-p">卒防智控是一个面向粤北地区（韶关、清远、河源等）的脑卒中健康风险自测平台，帮助用户了解自身风险因素，获取健康建议，并将评估记录同步至医生端管理网站。</view>
+
+  <view class="doc-section">评估依据</view>
+  <view class="doc-p">评估基于 18 项常见风险因素，包括年龄、性别、血压、血糖、病史、家族史、吸烟饮酒、运动、膳食和 BMI 等。评分结果用于健康风险分层和健康教育，不构成医疗诊断。</view>
+  <view class="doc-p">由于个体差异和未纳入的临床因素，评估结果可能存在偏差。如有疑问，请咨询专业医生。</view>
+
+  <view class="doc-section">数据与隐私</view>
+  <view class="doc-p">数据存储于腾讯云开发 CloudBase（中国境内），通过 HTTPS 传输，仅用户本人及授权管理员可访问。你可以随时在“历史”页清空记录。</view>
+
+  <view class="doc-section">免责声明</view>
+  <view class="doc-p">本小程序不提供医疗诊断或急救服务。如出现突然口角歪斜、肢体无力、言语不清等症状，请立即拨打 120。评估结果仅供参考，不能替代专业医生判断。</view>
+
+  <view class="doc-section">联系我们</view>
+  <view class="doc-p">如需行使个人信息权利、反馈问题或合作，请发送邮件至 3063298546@qq.com。</view>
+</scroll-view>

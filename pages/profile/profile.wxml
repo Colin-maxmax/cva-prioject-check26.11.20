@@ -1,0 +1,50 @@
+<view class="profile-page">
+  <view class="group">
+    <button class="row row-btn" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar">
+      <view class="row-label">头像</view>
+      <image wx:if="{{avatarUrl}}" class="row-avatar" src="{{avatarUrl}}" mode="aspectFill"></image>
+      <image wx:else class="row-avatar" src="/images/logo.png" mode="aspectFit"></image>
+      <view class="chevron">›</view>
+    </button>
+
+    <view class="row">
+      <view class="row-label">昵称</view>
+      <input
+        class="row-input"
+        type="nickname"
+        value="{{displayName}}"
+        maxlength="32"
+        placeholder="请输入昵称"
+        bindinput="onNameInput"
+        bindblur="onNameInput"
+      />
+    </view>
+
+    <view class="row">
+      <view class="row-label">登录方式</view>
+      <view class="row-value">{{loginTypeLabel}}</view>
+    </view>
+
+    <view class="row" wx:if="{{username}}">
+      <view class="row-label">账号</view>
+      <view class="row-value">{{username}}</view>
+    </view>
+
+    <view class="row" wx:if="{{userNo}}">
+      <view class="row-label">账号 ID</view>
+      <view class="row-value id-value">
+        <text class="id-prefix">CFZK</text>
+        <text class="id-num">{{userNo}}</text>
+      </view>
+    </view>
+
+    <view class="row" wx:if="{{createdAt}}">
+      <view class="row-label">注册时间</view>
+      <view class="row-value">{{createdAt}}</view>
+    </view>
+  </view>
+
+  <view class="tip">头像可从微信头像或相册中选择。昵称修改后点下方保存。</view>
+
+  <button class="save-btn" bindtap="saveName" loading="{{saving}}" disabled="{{saving}}">保存昵称</button>
+</view>

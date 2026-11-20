@@ -1,0 +1,80 @@
+<view class="login-page">
+  <view wx:if="{{checking}}" class="checking">正在登录...</view>
+
+  <block wx:else>
+    <view class="brand">
+      <image wx:if="{{!logoError}}" class="logo-img" src="/images/logo.png" mode="aspectFit" binderror="onLogoError"></image>
+      <view wx:else class="logo">卒</view>
+      <view class="title">脑卒中风险自测平台</view>
+      <view class="subtitle">欢迎使用卒防智控</view>
+    </view>
+
+    <view class="card">
+      <view class="field">
+        <text class="label">账号</text>
+        <input class="input" value="{{username}}" placeholder="请输入账号" maxlength="32" bindinput="onUsernameInput" />
+      </view>
+
+      <view class="field">
+        <text class="label">密码</text>
+        <view class="password-row">
+          <input class="input" password="{{!showPassword}}" value="{{password}}" placeholder="请输入密码" maxlength="64" bindinput="onPasswordInput" />
+          <text class="toggle" bindtap="togglePassword">{{showPassword ? '隐藏' : '显示'}}</text>
+        </view>
+      </view>
+
+      <view class="links">
+        <text class="link" bindtap="goRegister">立即注册</text>
+        <text class="link" bindtap="goForgot">忘记密码</text>
+      </view>
+
+      <view class="agreement" bindtap="toggleAgree">
+        <view class="check {{agreed ? 'checked' : ''}}">{{agreed ? '✓' : ''}}</view>
+        <text class="agreement-text">我已阅读并同意</text>
+        <text class="link" catchtap="openAgreement">《用户协议》</text>
+        <text class="agreement-text">与</text>
+        <text class="link" catchtap="openPrivacy">《隐私政策》</text>
+      </view>
+
+      <button class="btn-primary" loading="{{loggingIn}}" disabled="{{loggingIn}}" bindtap="onAccountLogin">登录</button>
+    </view>
+
+    <view class="divider"><text>其他登录方式</text></view>
+    <button class="btn-wechat" loading="{{wechatLogging}}" disabled="{{wechatLogging}}" bindtap="onWechatLogin">微信登录</button>
+    <view class="hint">已有微信评估记录的用户，请使用微信登录查看原数据</view>
+  </block>
+
+  <view wx:if="{{showProfilePrompt}}" class="prompt-mask">
+    <view class="prompt-box">
+      <view class="prompt-title">完善个人资料</view>
+      <view class="prompt-desc">是否使用微信头像和昵称？</view>
+
+      <view class="prompt-avatar-wrap">
+        <view class="prompt-avatar">
+          <image wx:if="{{profileAvatar}}" class="prompt-avatar-img" src="{{profileAvatar}}" mode="aspectFill"></image>
+          <image wx:else class="prompt-avatar-img" src="/images/logo.png" mode="aspectFit"></image>
+        </view>
+        <button class="prompt-avatar-hit" open-type="chooseAvatar" bindchooseavatar="onPromptChooseAvatar"></button>
+      </view>
+      <view class="prompt-avatar-tip">点击头像可选择微信头像</view>
+
+      <view class="prompt-field">
+        <text class="prompt-label">昵称</text>
+        <input
+          class="prompt-input"
+          type="nickname"
+          value="{{profileNickname}}"
+          maxlength="32"
+          placeholder="点击可选用微信昵称"
+          bindinput="onPromptNickname"
+          bindblur="onPromptNickname"
+        />
+      </view>
+
+      <view class="prompt-actions">
+        <button class="prompt-skip" bindtap="skipProfilePrompt">稍后设置</button>
+        <button class="prompt-ok" loading="{{profileSaving}}" disabled="{{profileSaving}}" bindtap="submitProfilePrompt">完成</button>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+@import "../login/login.wxss";
+
+.forgot-p {
+  font-size: 28rpx;
+  color: #4b5563;
+  line-height: 1.8;
+  margin-bottom: 24rpx;
+}

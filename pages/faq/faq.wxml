@@ -1,0 +1,11 @@
+<scroll-view scroll-y class="doc-page">
+  <view class="doc-title">常见问题</view>
+  <view class="doc-meta">使用前先看看这里</view>
+
+  <view class="faq-item" wx:for="{{faqs}}" wx:key="q">
+    <view class="faq-q">{{item.q}}</view>
+    <view class="faq-a">{{item.a}}</view>
+  </view>
+
+  <view class="faq-tip">更多问题或意见反馈，可以在“我的 → 意见反馈”中提交。</view>
+</scroll-view>

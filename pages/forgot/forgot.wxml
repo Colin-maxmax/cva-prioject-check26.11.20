@@ -1,0 +1,15 @@
+<view class="login-page">
+  <view class="brand">
+    <image wx:if="{{!logoError}}" class="logo-img" src="/images/logo.png" mode="aspectFit" binderror="onLogoError"></image>
+    <view wx:else class="logo">?</view>
+    <view class="title">忘记密码</view>
+    <view class="subtitle">账号密码找回</view>
+  </view>
+
+  <view class="card">
+    <view class="forgot-p">当前版本暂不支持自助重置密码。</view>
+    <view class="forgot-p">如果你之前使用微信登录，请返回登录页使用“微信登录”，原有评估数据不会丢失。</view>
+    <view class="forgot-p">如需重置账号密码，请发送邮件至 3063298546@qq.com；也可以返回登录页使用“微信登录”。</view>
+    <button class="btn-primary" bindtap="goLogin">返回登录</button>
+  </view>
+</view>

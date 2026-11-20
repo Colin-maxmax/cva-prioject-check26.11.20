@@ -1,0 +1,56 @@
+<view class="support-page">
+  <scroll-view scroll-y class="msg-list" scroll-into-view="{{scrollTo}}" scroll-with-animation>
+    <view class="tip-card">
+      有问题可以直接留言，工作人员看到后会在这里回复你。
+    </view>
+
+    <view wx:if="{{loading}}" class="state">加载中...</view>
+
+    <block wx:else>
+      <view wx:if="{{messages.length === 0}}" class="empty">
+        <view class="empty-icon">服</view>
+        <view class="empty-title">还没有对话</view>
+        <view class="empty-desc">在下方输入你的问题，我们尽快回复。</view>
+      </view>
+
+      <view
+        class="msg-row {{item.from === 'admin' ? 'from-admin' : 'from-user'}}"
+        wx:for="{{messages}}"
+        wx:key="id"
+      >
+        <view class="msg-avatar" wx:if="{{item.from === 'admin'}}">
+          <image wx:if="{{item.avatarUrl}}" class="msg-avatar-img" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+          <image wx:else class="msg-avatar-img" src="/images/logo.png" mode="aspectFit"></image>
+        </view>
+
+        <view class="msg-stack">
+          <text class="msg-author">{{item.label}}</text>
+          <view class="msg-bubble">
+            <text class="msg-content">{{item.content}}</text>
+            <text class="msg-time">{{item.time}}</text>
+          </view>
+        </view>
+
+        <view class="msg-avatar" wx:if="{{item.from !== 'admin'}}">
+          <image wx:if="{{item.avatarUrl}}" class="msg-avatar-img" src="{{item.avatarUrl}}" mode="aspectFill"></image>
+          <image wx:else class="msg-avatar-img" src="/images/logo.png" mode="aspectFit"></image>
+        </view>
+      </view>
+    </block>
+
+    <view id="msg-bottom" style="height: 20rpx;"></view>
+  </scroll-view>
+
+  <view class="input-bar">
+    <input
+      class="input-box"
+      value="{{input}}"
+      placeholder="输入你的问题..."
+      maxlength="500"
+      confirm-type="send"
+      bindinput="onInput"
+      bindconfirm="onSend"
+    />
+    <button class="send-btn" bindtap="onSend" loading="{{sending}}" disabled="{{sending}}">发送</button>
+  </view>
+</view>

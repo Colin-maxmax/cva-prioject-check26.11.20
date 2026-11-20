@@ -1,0 +1,57 @@
+{
+    "pages": [
+      "pages/login/login",
+      "pages/register/register",
+      "pages/forgot/forgot",
+      "pages/agreement/agreement",
+      "pages/privacy/privacy",
+      "pages/index/index",
+      "pages/report/report",
+      "pages/my/my",
+      "pages/assessment/assessment",
+      "pages/result/result",
+      "pages/history/history",
+      "pages/health/health",
+      "pages/emergency/emergency",
+      "pages/about/about",
+      "pages/changelog/changelog",
+      "pages/faq/faq",
+      "pages/support/support",
+      "pages/ai/ai",
+      "pages/profile/profile"
+    ],
+    "window": {
+      "navigationBarBackgroundColor": "#EAF3FF",
+      "navigationBarTitleText": "卒防智控",
+      "navigationBarTextStyle": "black",
+      "backgroundColor": "#f5f7fa"
+    },
+    "tabBar": {
+      "color": "#9CA3AF",
+      "selectedColor": "#2F80ED",
+      "backgroundColor": "#FFFFFF",
+      "borderStyle": "white",
+      "list": [
+        {
+          "pagePath": "pages/index/index",
+          "text": "首页",
+          "iconPath": "images/tab/home.png",
+          "selectedIconPath": "images/tab/home-active.png"
+        },
+        {
+          "pagePath": "pages/report/report",
+          "text": "报告",
+          "iconPath": "images/tab/report.png",
+          "selectedIconPath": "images/tab/report-active.png"
+        },
+        {
+          "pagePath": "pages/my/my",
+          "text": "我的",
+          "iconPath": "images/tab/my.png",
+          "selectedIconPath": "images/tab/my-active.png"
+        }
+      ]
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+  }

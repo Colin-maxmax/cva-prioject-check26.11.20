@@ -1,0 +1,254 @@
+<view class="assessment-page">
+  <view class="page-header">
+    <view class="page-title">脑卒中风险评估</view>
+    <view class="page-sub">填写以下信息，约 2 分钟；带 <text class="required">*</text> 为必填</view>
+  </view>
+
+  <form bindsubmit="onSubmit">
+    <!-- 基本信息 -->
+    <view class="section-card">
+      <view class="section-head">
+        <view class="section-icon blue">基</view>
+        <view class="section-title">基本信息</view>
+      </view>
+
+      <view class="field">
+        <view class="field-label">姓名/序号 <text class="required">*</text></view>
+        <input class="field-input" placeholder="请输入患者姓名" maxlength="20" bindinput="onInput" data-field="patientName" />
+        <view class="field-hint">填写过的姓名会自动带出上次的基本信息，高危因素和临床指标仍需重新填写。</view>
+      </view>
+
+      <view class="field-grid">
+        <view class="field">
+          <view class="field-label">年龄 <text class="required">*</text></view>
+          <input class="field-input" type="number" placeholder="岁" value="{{formData.age}}" bindinput="onInput" data-field="age" />
+        </view>
+        <view class="field">
+          <view class="field-label">性别 <text class="required">*</text></view>
+          <picker mode="selector" range="{{genderOptions}}" bindchange="onPickerChange" data-field="gender">
+            <view class="field-input picker-value {{formData.gender ? '' : 'is-placeholder'}}">
+              <text>{{formData.gender || '请选择'}}</text>
+              <text class="picker-arrow">›</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="field-grid">
+        <view class="field">
+          <view class="field-label">婚姻状况</view>
+          <picker mode="selector" range="{{maritalOptions}}" bindchange="onPickerChange" data-field="everMarried">
+            <view class="field-input picker-value {{formData.everMarried ? '' : 'is-placeholder'}}">
+              <text>{{formData.everMarried || '请选择'}}</text>
+              <text class="picker-arrow">›</text>
+            </view>
+          </picker>
+        </view>
+        <view class="field">
+          <view class="field-label">居住地</view>
+          <picker mode="selector" range="{{residenceOptions}}" bindchange="onPickerChange" data-field="residenceType">
+            <view class="field-input picker-value {{formData.residenceType ? '' : 'is-placeholder'}}">
+              <text>{{formData.residenceType || '请选择'}}</text>
+              <text class="picker-arrow">›</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="field">
+        <view class="field-label">职业类型</view>
+        <picker mode="selector" range="{{workTypeOptions}}" bindchange="onPickerChange" data-field="workType">
+          <view class="field-input picker-value {{formData.workType ? '' : 'is-placeholder'}}">
+            <text>{{formData.workType || '请选择'}}</text>
+            <text class="picker-arrow">›</text>
+          </view>
+        </picker>
+      </view>
+
+      <view class="field-grid">
+        <view class="field">
+          <view class="field-label">学历</view>
+          <picker mode="selector" range="{{educationOptions}}" bindchange="onPickerChange" data-field="education">
+            <view class="field-input picker-value {{formData.education ? '' : 'is-placeholder'}}">
+              <text>{{formData.education || '请选择'}}</text>
+              <text class="picker-arrow">›</text>
+            </view>
+          </picker>
+        </view>
+        <view class="field">
+          <view class="field-label">家庭月收入</view>
+          <picker mode="selector" range="{{incomeOptions}}" bindchange="onPickerChange" data-field="monthlyIncome">
+            <view class="field-input picker-value {{formData.monthlyIncome ? '' : 'is-placeholder'}}">
+              <text>{{formData.monthlyIncome || '请选择'}}</text>
+              <text class="picker-arrow">›</text>
+            </view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="field" style="margin-top: 22rpx;">
+        <view class="field-label">医疗费用承担方式</view>
+        <picker mode="selector" range="{{insuranceOptions}}" bindchange="onPickerChange" data-field="medicalInsurance">
+          <view class="field-input picker-value {{formData.medicalInsurance ? '' : 'is-placeholder'}}">
+            <text>{{formData.medicalInsurance || '请选择'}}</text>
+            <text class="picker-arrow">›</text>
+          </view>
+        </picker>
+      </view>
+    </view>
+
+    <!-- 高危因素（8+2） -->
+    <view class="section-card">
+      <view class="section-head">
+        <view class="section-icon teal">病</view>
+        <view class="section-title">高危因素（8+2）</view>
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">高血压</view>
+        <switch checked="{{formData.hypertension === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="hypertension" />
+      </view>
+
+      <view class="field" style="margin-top: 20rpx;">
+        <view class="field-label">心脏病类型</view>
+        <picker mode="selector" range="{{heartDiseaseOptions}}" bindchange="onPickerChange" data-field="heartDiseaseType">
+          <view class="field-input picker-value">
+            <text>{{heartDiseaseMap[formData.heartDiseaseType] || '请选择'}}</text>
+            <text class="picker-arrow">›</text>
+          </view>
+        </picker>
+      </view>
+
+      <view class="field" style="margin-top: 22rpx;" wx:if="{{formData.heartDiseaseType === '2'}}">
+        <view class="field-label">请填写具体心脏病类型</view>
+        <input class="field-input" placeholder="如：冠心病、心肌病、心脏瓣膜病" maxlength="30" value="{{formData.heartDiseaseNote}}" bindinput="onInput" data-field="heartDiseaseNote" />
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">以前发生过中风</view>
+        <switch checked="{{formData.strokeHistory === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="strokeHistory" />
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">以前发生过短暂性脑缺血</view>
+        <switch checked="{{formData.tiaHistory === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="tiaHistory" />
+      </view>
+
+      <view class="field" style="margin-top: 20rpx;">
+        <view class="field-label">脑卒中家族史</view>
+        <picker mode="selector" range="{{familyHistoryOptions}}" bindchange="onPickerChange" data-field="strokeFamilyHistory">
+          <view class="field-input picker-value">
+            <text>{{familyHistoryMap[formData.strokeFamilyHistory] || '请选择'}}</text>
+            <text class="picker-arrow">›</text>
+          </view>
+        </picker>
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">血脂异常</view>
+        <switch checked="{{formData.hyperlipidemia === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="hyperlipidemia" />
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">糖尿病</view>
+        <switch checked="{{formData.diabetes === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="diabetes" />
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">超重或肥胖（BMI≥24）</view>
+        <switch checked="{{formData.overweight === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="overweight" />
+      </view>
+      <view class="field-hint">根据下方身高体重自动计算，可手动修正。</view>
+
+      <view class="switch-row">
+        <view class="field-label">吸烟</view>
+        <switch checked="{{formData.smoking === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="smoking" />
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">运动缺乏</view>
+        <switch checked="{{formData.lackExercise === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="lackExercise" />
+      </view>
+      <view class="field-hint">运动＜3 次/周且每次中等强度以上运动＜30 分钟，或长时间静坐的劳动者。</view>
+    </view>
+
+    <!-- 临床指标 -->
+    <view class="section-card">
+      <view class="section-head">
+        <view class="section-icon orange">检</view>
+        <view class="section-title">临床指标</view>
+      </view>
+
+      <view class="field-grid">
+        <view class="field">
+          <view class="field-label">收缩压 (mmHg) <text class="required">*</text></view>
+          <input class="field-input" type="digit" placeholder="如 120" bindinput="onInput" data-field="systolicBP" />
+        </view>
+        <view class="field">
+          <view class="field-label">舒张压 (mmHg) <text class="required">*</text></view>
+          <input class="field-input" type="digit" placeholder="如 80" bindinput="onInput" data-field="diastolicBP" />
+        </view>
+      </view>
+      <view class="field-hint">建议安静休息 5 分钟后测量。</view>
+
+      <view class="field" style="margin-top: 22rpx;">
+        <view class="field-label">空腹血糖 (mmol/L) <text class="required">*</text></view>
+        <input class="field-input" type="digit" placeholder="如 5.6" bindinput="onInput" data-field="avgGlucoseLevel" />
+        <view class="field-hint">正常 3.9-6.1；6.1-7.0 为糖尿病前期；≥7.0 需警惕糖尿病。</view>
+      </view>
+
+      <view class="field-grid" style="margin-top: 22rpx;">
+        <view class="field">
+          <view class="field-label">身高 (cm) <text class="required">*</text></view>
+          <input class="field-input" type="digit" placeholder="如 170" bindinput="onInput" data-field="height" />
+        </view>
+        <view class="field">
+          <view class="field-label">体重 (kg) <text class="required">*</text></view>
+          <input class="field-input" type="digit" placeholder="如 65" bindinput="onInput" data-field="weight" />
+        </view>
+      </view>
+
+      <view wx:if="{{bmi}}" class="bmi-card">
+        <text class="bmi-label">BMI</text>
+        <text class="bmi-value">{{bmi}}</text>
+        <text class="bmi-unit">kg/m²</text>
+      </view>
+    </view>
+
+    <!-- 其他 -->
+    <view class="section-card">
+      <view class="section-head">
+        <view class="section-icon purple">其</view>
+        <view class="section-title">其他</view>
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">饮酒</view>
+        <switch checked="{{formData.drinking === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="drinking" />
+      </view>
+
+      <view class="switch-row">
+        <view class="field-label">其他家族遗传性疾病</view>
+        <switch checked="{{formData.otherFamilyHistory === '1'}}" color="#0E9F6E" bindchange="onSwitchChange" data-field="otherFamilyHistory" />
+      </view>
+      <view class="field-hint">家族性高血压、糖尿病等。</view>
+
+      <view class="field" style="margin-top: 22rpx;">
+        <view class="field-label">膳食问题（可多选）</view>
+        <checkbox-group class="chip-group" bindchange="onDietaryChange">
+          <label class="chip {{item.checked ? 'chip-active' : ''}}" wx:for="{{dietaryOptions}}" wx:key="value">
+            <checkbox value="{{item.value}}" checked="{{item.checked}}" color="#0E9F6E" class="chip-check" />
+            <text>{{item.name}}</text>
+          </label>
+        </checkbox-group>
+      </view>
+    </view>
+
+    <view class="privacy-tip">本工具会收集您填写的健康信息用于风险评估，结果仅供参考，不构成医疗诊断；提交后数据会同步到医生端网站。</view>
+
+    <view class="submit-bar">
+      <view class="submit-hint">数据会同步到医生端</view>
+      <button class="submit-btn" formType="submit" loading="{{submitting}}" disabled="{{submitting}}">提交评估</button>
+    </view>
+  </form>
+</view>

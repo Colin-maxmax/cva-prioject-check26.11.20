@@ -1,0 +1,64 @@
+<scroll-view scroll-y class="doc-page">
+  <view class="doc-title">健康知识</view>
+  <view class="doc-meta">内容调整中</view>
+
+  <view class="coming-card">
+    <view class="coming-icon">知</view>
+    <view class="coming-title">该功能即将优化</view>
+    <view class="coming-desc">健康知识板块正在升级调整，后续将提供更完善的内容，敬请期待。</view>
+  </view>
+
+  <!-- ==========
+
+  <view class="doc-meta">脑卒中预防与识别</view>
+
+  <view class="doc-section">一、FAST：快速识别中风</view>
+  <view class="fast-grid">
+    <view class="fast-item">
+      <view class="fast-letter">F</view>
+      <view class="fast-title">Face 面部</view>
+      <view class="fast-desc">让患者微笑，看是否口角歪斜</view>
+    </view>
+    <view class="fast-item">
+      <view class="fast-letter">A</view>
+      <view class="fast-title">Arm 手臂</view>
+      <view class="fast-desc">让患者平举双臂，看是否一侧无力</view>
+    </view>
+    <view class="fast-item">
+      <view class="fast-letter">S</view>
+      <view class="fast-title">Speech 语言</view>
+      <view class="fast-desc">让患者说一句话，看是否含糊不清</view>
+    </view>
+    <view class="fast-item">
+      <view class="fast-letter">T</view>
+      <view class="fast-title">Time 时间</view>
+      <view class="fast-desc">出现任何一项，立即拨打 120</view>
+    </view>
+  </view>
+  <view class="doc-p">时间就是生命。越早到有卒中救治能力的医院，治疗效果越好。</view>
+
+  <view class="doc-section">二、预防要点</view>
+  <view class="doc-p">1. 控制血压：高血压是脑卒中最重要的危险因素，遵医嘱服药，定期监测。</view>
+  <view class="doc-p">2. 控制血糖和血脂：定期体检，发现异常及时就医。</view>
+  <view class="doc-p">3. 戒烟限酒：吸烟和过量饮酒都会增加脑卒中风险。</view>
+  <view class="doc-p">4. 健康饮食：少盐、少油、少糖，多吃蔬菜水果和全谷物。</view>
+  <view class="doc-p">5. 规律运动：每周至少 150 分钟中等强度运动，量力而行。</view>
+  <view class="doc-p">6. 控制体重，保持规律作息，避免长期熬夜和情绪激动。</view>
+
+  <view class="doc-section">三、饮食建议</view>
+  <view class="doc-p">每天食盐摄入建议不超过 5 克，少吃咸菜、腌制品和加工食品。</view>
+  <view class="doc-p">少吃肥肉、油炸食品，选择鱼、禽、豆制品等优质蛋白。</view>
+  <view class="doc-p">每天吃够蔬菜水果，主食适当增加粗粮。</view>
+
+  <view class="doc-section">四、运动建议</view>
+  <view class="doc-p">40岁以下：每周150分钟中等强度运动（或75分钟高强度），每次30—40分钟；每坐1小时起身活动；新手从10—15分钟起步。</view>
+  <view class="doc-p">40-60 岁：快走、慢跑、游泳、骑车等，每周 5 天，每天 30 分钟左右。</view>
+  <view class="doc-p">60-80 岁：散步、太极拳、八段锦等，以身体舒适为度，注意防跌倒。</view>
+  <view class="doc-p">80 岁以上：在家人陪同下进行低强度活动，避免剧烈运动。</view>
+
+  <view class="doc-section">五、何时就医</view>
+  <view class="doc-p">如果出现突然口角歪斜、单侧肢体无力、言语不清、视物模糊、剧烈头痛、行走不稳等症状，请立即拨打 120，不要等待症状自行缓解。</view>
+
+  <view class="doc-p" style="margin-top: 28rpx; color: #9ca3af; font-size: 24rpx;">本内容仅供健康科普，不能替代专业医生诊断。</view>
+  ========== -->
+</scroll-view>

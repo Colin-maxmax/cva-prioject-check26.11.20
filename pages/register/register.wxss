@@ -1,0 +1,9 @@
+@import "../login/login.wxss";
+
+.hint {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 22rpx;
+  margin-top: 30rpx;
+  line-height: 1.6;
+}

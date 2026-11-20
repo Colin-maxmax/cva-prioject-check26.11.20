@@ -1,0 +1,133 @@
+<view class="my-page">
+  <view class="profile-hero">
+    <view class="hero-bg"></view>
+    <view class="hero-row">
+      <view class="avatar-wrap">
+        <view class="avatar-circle">
+          <image wx:if="{{avatarUrl}}" class="avatar-img" src="{{avatarUrl}}" mode="aspectFill"></image>
+          <image wx:else class="avatar-logo" src="/images/logo.png" mode="aspectFit"></image>
+        </view>
+        <button class="avatar-hit" open-type="chooseAvatar" bindchooseavatar="onChooseAvatar"></button>
+        <view class="avatar-edit">✎</view>
+      </view>
+      <view class="hero-info">
+        <view class="profile-name">
+          {{name}}
+          <text wx:if="{{roleLabel}}" class="role-badge">{{roleLabel}}</text>
+        </view>
+        <view class="profile-sub">{{loginTypeLabel}}</view>
+        <view class="id-line" wx:if="{{userNo}}">
+          <text class="id-prefix">CFZK</text>
+          <text class="id-num">{{userNo}}</text>
+        </view>
+      </view>
+      <view class="hero-edit" bindtap="goProfile">编辑资料</view>
+    </view>
+  </view>
+
+  <view class="stats-card">
+    <view class="stat">
+      <view class="stat-num">{{total}}</view>
+      <view class="stat-label">评估记录</view>
+    </view>
+    <view class="stat">
+      <view class="stat-num">{{high}}</view>
+      <view class="stat-label">高风险</view>
+    </view>
+    <view class="stat">
+      <view class="stat-num small">{{lastDate}}</view>
+      <view class="stat-label">最近评估</view>
+    </view>
+  </view>
+
+  <view class="group">
+    <view class="group-title">健康管理</view>
+    <view class="row" bindtap="goHistory">
+      <view class="row-icon blue">记</view>
+      <view class="row-label">我的评估记录</view>
+      <view class="chevron">›</view>
+    </view>
+    <view class="row" bindtap="goFamily">
+      <view class="row-icon teal">家</view>
+      <view class="row-label">家人档案</view>
+      <view class="tag">即将上线</view>
+      <view class="chevron">›</view>
+    </view>
+    <view class="row" bindtap="goReminder">
+      <view class="row-icon orange">铃</view>
+      <view class="row-label">复测提醒</view>
+      <view class="tag">即将上线</view>
+      <view class="chevron">›</view>
+    </view>
+  </view>
+
+  <view class="group">
+    <view class="group-title">服务与帮助</view>
+    <view class="row" bindtap="goHealth">
+      <view class="row-icon teal">知</view>
+      <view class="row-label">健康知识</view>
+      <view class="chevron">›</view>
+    </view>
+    <view class="row" bindtap="goFaq">
+      <view class="row-icon blue">问</view>
+      <view class="row-label">常见问题</view>
+      <view class="chevron">›</view>
+    </view>
+    <view class="row" bindtap="goChangelog">
+      <view class="row-icon purple">公</view>
+      <view class="row-label">版本更新公告</view>
+      <view class="chevron">›</view>
+    </view>
+    <view class="row" bindtap="goAbout">
+      <view class="row-icon cyan">关</view>
+      <view class="row-label">关于我们</view>
+      <view class="chevron">›</view>
+    </view>
+  </view>
+
+  <view class="group">
+    <view class="group-title">账号与隐私</view>
+    <view class="row" bindtap="goProfile">
+      <view class="row-icon blue">资</view>
+      <view class="row-label">账号资料</view>
+      <view class="chevron">›</view>
+    </view>
+    <view class="row" bindtap="goAgreement">
+      <view class="row-icon gray">协</view>
+      <view class="row-label">用户协议</view>
+      <view class="chevron">›</view>
+    </view>
+    <view class="row" bindtap="goPrivacy">
+      <view class="row-icon gray">私</view>
+      <view class="row-label">隐私政策</view>
+      <view class="chevron">›</view>
+    </view>
+
+    <button class="row row-btn" open-type="feedback">
+      <view class="row-icon purple">反</view>
+      <view class="row-label">意见反馈</view>
+      <view class="chevron">›</view>
+    </button>
+
+    <view class="row" bindtap="goSupport">
+      <view class="row-icon cyan">服</view>
+      <view class="row-label">客服</view>
+      <view class="row-badge" wx:if="{{supportUnread > 0}}">{{supportUnread > 99 ? '99+' : supportUnread}}</view>
+      <view class="chevron">›</view>
+    </view>
+
+    <button class="row row-btn" open-type="share">
+      <view class="row-icon blue">荐</view>
+      <view class="row-label">推荐给好友</view>
+      <view class="chevron">›</view>
+    </button>
+
+    <view class="row row-logout" bindtap="logout">
+      <view class="row-icon red">退</view>
+      <view class="row-label">退出登录</view>
+      <view class="chevron">›</view>
+    </view>
+  </view>
+
+  <view class="version">卒防智控 v{{version}}</view>
+</view>

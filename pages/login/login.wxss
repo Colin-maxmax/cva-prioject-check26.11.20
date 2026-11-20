@@ -1,0 +1,350 @@
+page {
+  background: linear-gradient(160deg, #eaf4ff 0%, #f7fbff 60%);
+}
+
+.login-page {
+  min-height: 100vh;
+  padding: 80rpx 40rpx 60rpx;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.checking {
+  text-align: center;
+  padding-top: 240rpx;
+  color: #6b7280;
+  font-size: 28rpx;
+}
+
+.brand {
+  text-align: center;
+  margin-bottom: 50rpx;
+}
+
+.logo {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0E9F6E, #2F80ED);
+  color: #fff;
+  font-size: 56rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24rpx;
+}
+
+.logo-img {
+  width: 176rpx;
+  height: 176rpx;
+  display: block;
+  margin: 0 auto 24rpx;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 0 8rpx 24rpx rgba(15, 23, 42, 0.12);
+}
+
+.title {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #1f2937;
+  letter-spacing: 2rpx;
+}
+
+.subtitle {
+  margin-top: 12rpx;
+  font-size: 28rpx;
+  color: #6b7280;
+}
+
+.card {
+  background: #fff;
+  border-radius: 24rpx;
+  padding: 40rpx 32rpx;
+  box-shadow: 0 12rpx 40rpx rgba(15, 23, 42, 0.08);
+}
+
+.field {
+  margin-bottom: 28rpx;
+}
+
+.label {
+  display: block;
+  font-size: 28rpx;
+  color: #374151;
+  margin-bottom: 12rpx;
+}
+
+.input {
+  width: 100%;
+  height: 88rpx;
+  box-sizing: border-box;
+  padding: 0 24rpx;
+  border: 1rpx solid #e5e7eb;
+  border-radius: 12rpx;
+  font-size: 30rpx;
+  background: #f9fafb;
+}
+
+.password-row {
+  position: relative;
+}
+
+.password-row .input {
+  padding-right: 110rpx;
+}
+
+.toggle {
+  position: absolute;
+  right: 24rpx;
+  top: 0;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-size: 26rpx;
+  color: #0E9F6E;
+}
+
+.links {
+  display: flex;
+  justify-content: space-between;
+  margin: 4rpx 0 24rpx;
+}
+
+.link {
+  color: #0E9F6E;
+  font-size: 26rpx;
+}
+
+.agreement {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 24rpx;
+  color: #6b7280;
+  margin-bottom: 28rpx;
+}
+
+.check {
+  width: 34rpx;
+  height: 34rpx;
+  border-radius: 50%;
+  border: 2rpx solid #d1d5db;
+  margin-right: 12rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 22rpx;
+}
+
+.check.checked {
+  background: #0E9F6E;
+  border-color: #0E9F6E;
+}
+
+.agreement-text {
+  margin-right: 4rpx;
+}
+
+.btn-primary {
+  width: 100%;
+  height: 92rpx;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 46rpx;
+  background: linear-gradient(135deg, #0E9F6E, #2F80ED);
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.btn-primary::after,
+.btn-wechat::after {
+  border: none;
+}
+
+.divider {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 24rpx;
+  margin: 40rpx 0 20rpx;
+}
+
+.btn-wechat {
+  width: 100%;
+  height: 88rpx;
+  box-sizing: border-box;
+  padding: 0;
+  border-radius: 44rpx;
+  background: #07C160;
+  color: #fff;
+  font-size: 30rpx;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.hint {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 22rpx;
+  margin-top: 18rpx;
+  line-height: 1.6;
+}
+
+/* 微信登录后完善资料弹窗 */
+.prompt-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 24, 39, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60rpx;
+  z-index: 50;
+  box-sizing: border-box;
+}
+
+.prompt-box {
+  width: 100%;
+  max-width: 620rpx;
+  background: #fff;
+  border-radius: 28rpx;
+  padding: 40rpx 36rpx 32rpx;
+  box-sizing: border-box;
+}
+
+.prompt-title {
+  font-size: 34rpx;
+  font-weight: 700;
+  text-align: center;
+  color: #1f2937;
+}
+
+.prompt-desc {
+  margin-top: 12rpx;
+  text-align: center;
+  font-size: 26rpx;
+  color: #6b7280;
+}
+
+.prompt-avatar-wrap {
+  position: relative;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 34rpx auto 0;
+}
+
+.prompt-avatar {
+  width: 160rpx;
+  height: 160rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #e5edf9;
+  border: 4rpx solid #e5edf9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-avatar-img {
+  width: 152rpx;
+  height: 152rpx;
+  display: block;
+}
+
+.prompt-avatar-hit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 160rpx;
+  height: 160rpx;
+  padding: 0;
+  margin: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0;
+}
+
+.prompt-avatar-hit::after {
+  border: none;
+}
+
+.prompt-avatar-tip {
+  margin-top: 14rpx;
+  text-align: center;
+  font-size: 22rpx;
+  color: #9ca3af;
+}
+
+.prompt-field {
+  margin-top: 28rpx;
+  height: 88rpx;
+  padding: 0 24rpx;
+  background: #f5f7fa;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.prompt-label {
+  width: 90rpx;
+  font-size: 26rpx;
+  color: #6b7280;
+}
+
+.prompt-input {
+  flex: 1;
+  font-size: 28rpx;
+  color: #1f2937;
+}
+
+.prompt-actions {
+  display: flex;
+  margin-top: 34rpx;
+}
+
+.prompt-skip,
+.prompt-ok {
+  flex: 1;
+  height: 84rpx;
+  line-height: 84rpx;
+  padding: 0;
+  border-radius: 42rpx;
+  font-size: 28rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prompt-skip {
+  background: #f3f5f9;
+  color: #6b7280;
+  margin-right: 18rpx;
+}
+
+.prompt-ok {
+  background: #2F80ED;
+  color: #fff;
+  font-weight: 600;
+}
+
+.prompt-skip::after,
+.prompt-ok::after {
+  border: none;
+}

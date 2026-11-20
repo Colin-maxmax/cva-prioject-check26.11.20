@@ -1,0 +1,84 @@
+@import "../agreement/agreement.wxss";
+
+.coming-card {
+  margin-top: 40rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  padding: 60rpx 40rpx;
+  text-align: center;
+  box-shadow: 0 6rpx 24rpx rgba(15, 23, 42, 0.04);
+}
+
+.coming-icon {
+  width: 96rpx;
+  height: 96rpx;
+  line-height: 96rpx;
+  margin: 0 auto 24rpx;
+  border-radius: 50%;
+  background: #eff6ff;
+  color: #2F80ED;
+  font-size: 38rpx;
+  font-weight: 600;
+}
+
+.coming-title {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.coming-desc {
+  margin-top: 14rpx;
+  font-size: 26rpx;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.coming-tip {
+  margin-top: 32rpx;
+  text-align: center;
+  font-size: 24rpx;
+  color: #9ca3af;
+}
+
+.health-page {
+  height: auto;
+  min-height: 100vh;
+  padding-bottom: 80rpx;
+}
+
+.fast-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20rpx 0 24rpx;
+}
+
+.fast-item {
+  width: 48%;
+  margin-bottom: 16rpx;
+  box-sizing: border-box;
+  background: #fff7ed;
+  border-radius: 16rpx;
+  padding: 22rpx;
+}
+
+.fast-letter {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #ED6C02;
+}
+
+.fast-title {
+  margin: 6rpx 0;
+  font-size: 26rpx;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.fast-desc {
+  font-size: 22rpx;
+  color: #6b7280;
+  line-height: 1.55;
+}
+

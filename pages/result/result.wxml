@@ -1,0 +1,59 @@
+<view class="result-page">
+  <view class="page-header">
+    <view class="page-title">评估结果</view>
+    <view class="page-sub">请查看您的脑卒中风险提示</view>
+  </view>
+
+  <block wx:if="{{result}}">
+  <view class="result-card {{riskTone}}">
+    <view class="patient-row">
+      <view class="patient-name">{{name || '患者'}}</view>
+      <view class="patient-meta">{{age || '--'}}岁 / {{gender || '--'}}</view>
+    </view>
+
+    <view class="risk-label">风险等级</view>
+    <view class="risk-level {{riskTone}}">{{result.riskLevel}}</view>
+
+    <view class="prob-row">
+      <view class="prob-label">患病概率</view>
+      <view class="prob-value {{riskTone}}">{{result.probability}}%</view>
+    </view>
+    <view class="prob-track">
+      <view class="prob-fill {{probWidthClass}} {{riskTone}}"></view>
+    </view>
+
+  </view>
+
+  <view class="card">
+    <view class="card-title">主要风险因素</view>
+    <view class="factors" wx:if="{{result.riskFactors.length > 0}}">
+      <text class="factor" wx:for="{{result.riskFactors}}" wx:key="*this">{{item}}</text>
+    </view>
+    <view wx:else class="muted">未发现明显风险因素</view>
+  </view>
+
+  <view class="advice-card {{riskTone}}">
+    <view class="advice-title">
+      {{riskTone === 'high' ? '需要重点关注' : (riskTone === 'medium' ? '建议持续关注' : '保持健康生活方式')}}
+    </view>
+    <view class="advice-text">{{advice}}</view>
+  </view>
+
+  <view class="card actions-card">
+    <button class="btn-primary" bindtap="goReport">查看健康报告</button>
+    <view class="action-row">
+      <button class="btn-ghost" bindtap="speakResult">{{speaking ? '停止播报' : '语音播报'}}</button>
+      <button class="btn-ghost" bindtap="saveReport">保存报告</button>
+    </view>
+    <view class="action-row">
+      <button class="btn-ghost" bindtap="goAssessment">再测一次</button>
+      <button class="btn-ghost" bindtap="goHistory">查看历史</button>
+    </view>
+    <view class="home-link" bindtap="goHome">返回首页</view>
+  </view>
+  </block>
+
+  <view wx:else class="state">结果读取失败，请返回重新评估</view>
+
+  <view class="disclaimer">本评估结果仅供参考，不能替代专业医生诊断。如出现突然口角歪斜、肢体无力、言语不清等症状，请立即拨打 120。</view>
+</view>

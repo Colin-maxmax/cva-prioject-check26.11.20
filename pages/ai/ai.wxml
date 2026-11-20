@@ -1,0 +1,95 @@
+<view class="ai-page">
+  <view class="chat-head">
+    <view class="head-btn" bindtap="toggleDrawer" hover-class="head-btn-hover">☰</view>
+    <view class="head-title">AI 健康助手</view>
+    <view class="head-btn" bindtap="newChat" hover-class="head-btn-hover">＋</view>
+  </view>
+
+  <scroll-view scroll-y class="msg-list" scroll-into-view="{{scrollTo}}" scroll-with-animation>
+    <view class="tip-card">
+      回答由 AI 生成，仅供健康科普参考，不能替代医生诊断。如有紧急症状请拨打 120。
+    </view>
+
+    <view wx:if="{{messages.length === 0}}" class="welcome">
+      <view class="welcome-icon">AI</view>
+      <view class="welcome-title">您好，我是健康助手</view>
+      <view class="welcome-desc">可以问我健康生活方式、饮食运动、复测频率等问题。回答会参考您最近一次评估。</view>
+    </view>
+
+    <view
+      class="msg-row {{item.role === 'user' ? 'from-user' : 'from-ai'}}"
+      wx:for="{{messages}}"
+      wx:key="id"
+    >
+      <view class="msg-stack">
+        <text class="msg-author">{{item.role === 'user' ? '我' : 'AI 助手'}}</text>
+        <view class="msg-bubble">
+          <text class="msg-content">{{item.content}}<text wx:if="{{item.typing}}" class="cursor">▍</text></text>
+          <text class="msg-time">{{item.time}}</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{sending}}" class="msg-row from-ai">
+      <view class="msg-stack">
+        <text class="msg-author">AI 助手</text>
+        <view class="msg-bubble typing">
+          <text class="msg-content">正在思考…</text>
+        </view>
+      </view>
+    </view>
+
+    <view wx:if="{{showQuick}}" class="quick-list">
+      <view class="quick-title">试试这样问</view>
+      <view
+        class="quick-chip"
+        wx:for="{{quickQuestions}}"
+        wx:key="*this"
+        data-q="{{item}}"
+        bindtap="onQuickAsk"
+      >{{item}}</view>
+    </view>
+
+    <view id="msg-bottom" style="height: 20rpx;"></view>
+    <view id="msg-bottom-2" style="height: 20rpx;"></view>
+  </scroll-view>
+
+  <view class="input-bar">
+    <input
+      class="input-box"
+      value="{{input}}"
+      placeholder="输入你的问题..."
+      maxlength="300"
+      confirm-type="send"
+      bindinput="onInput"
+      bindconfirm="onSend"
+      adjust-position
+    />
+    <button class="send-btn" bindtap="onSend" loading="{{sending}}" disabled="{{sending || typing}}">发送</button>
+  </view>
+
+  <view class="drawer-mask" wx:if="{{showDrawer}}" bindtap="closeDrawer">
+    <view class="drawer" catchtap="noop">
+      <view class="drawer-head">
+        <text class="drawer-title">历史对话</text>
+        <text class="drawer-new" catchtap="newChat">＋ 新聊天</text>
+      </view>
+      <scroll-view scroll-y class="drawer-list">
+        <view
+          class="session-item {{item.id === currentId ? 'active' : ''}}"
+          wx:for="{{sessions}}"
+          wx:key="id"
+          data-id="{{item.id}}"
+          bindtap="openSession"
+        >
+          <view class="session-main">
+            <view class="session-title">{{item.title}}</view>
+            <view class="session-time">{{item.updatedText}}</view>
+          </view>
+          <view class="session-del" data-id="{{item.id}}" catchtap="deleteSession">×</view>
+        </view>
+        <view wx:if="{{sessions.length === 0}}" class="drawer-empty">还没有历史对话</view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

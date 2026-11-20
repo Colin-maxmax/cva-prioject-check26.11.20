@@ -1,0 +1,253 @@
+page {
+  background: #f5f7fa;
+}
+
+.assessment-page {
+  min-height: 100vh;
+  padding-bottom: 220rpx;
+  box-sizing: border-box;
+}
+
+.page-header {
+  background: linear-gradient(135deg, #EAF3FF, #DCEBFF);
+  padding: 40rpx 36rpx 44rpx;
+}
+
+.page-title {
+  font-size: 44rpx;
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.page-sub {
+  margin-top: 12rpx;
+  font-size: 24rpx;
+  color: #5b6b82;
+  line-height: 1.6;
+}
+
+.required {
+  color: #EF4444;
+  margin-left: 4rpx;
+}
+
+.section-card {
+  margin: 24rpx 32rpx 0;
+  background: #fff;
+  border-radius: 22rpx;
+  padding: 28rpx;
+  box-shadow: 0 6rpx 24rpx rgba(15, 23, 42, 0.04);
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  margin-bottom: 22rpx;
+}
+
+.section-icon {
+  width: 52rpx;
+  height: 52rpx;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 14rpx;
+  flex-shrink: 0;
+}
+
+.section-icon.blue { background: #2F80ED; }
+.section-icon.teal { background: #0E9F6E; }
+.section-icon.orange { background: #F59E0B; }
+.section-icon.purple { background: #8B5CF6; }
+
+.section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.field {
+  margin-bottom: 22rpx;
+}
+
+.field:last-child {
+  margin-bottom: 0;
+}
+
+.field-grid {
+  display: flex;
+}
+
+.field-grid .field {
+  flex: 1;
+  min-width: 0;
+}
+
+.field-grid .field + .field {
+  margin-left: 20rpx;
+}
+
+.field-label {
+  font-size: 26rpx;
+  color: #374151;
+  margin-bottom: 10rpx;
+}
+
+.field-input {
+  width: 100%;
+  height: 84rpx;
+  box-sizing: border-box;
+  padding: 0 22rpx;
+  background: #f9fafb;
+  border: 1rpx solid #e5e7eb;
+  border-radius: 14rpx;
+  font-size: 28rpx;
+  color: #1f2937;
+}
+
+.picker-value {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.picker-value.is-placeholder {
+  color: #9ca3af;
+}
+
+.picker-arrow {
+  color: #cbd5e1;
+  font-size: 34rpx;
+  line-height: 1;
+}
+
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 84rpx;
+  border-bottom: 1rpx solid #f3f4f6;
+}
+
+.switch-row:last-child {
+  border-bottom: none;
+}
+
+.switch-row .field-label {
+  margin-bottom: 0;
+}
+
+.field-hint {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: #9ca3af;
+  line-height: 1.55;
+}
+
+.bmi-card {
+  margin-top: 20rpx;
+  background: #f0fdf4;
+  border: 1rpx solid #bbf7d0;
+  border-radius: 14rpx;
+  padding: 16rpx 22rpx;
+  display: flex;
+  align-items: baseline;
+}
+
+.bmi-label {
+  font-size: 24rpx;
+  color: #4b5563;
+  margin-right: 12rpx;
+}
+
+.bmi-value {
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #0E9F6E;
+}
+
+.bmi-unit {
+  font-size: 22rpx;
+  color: #6b7280;
+  margin-left: 6rpx;
+}
+
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  display: flex;
+  align-items: center;
+  margin: 0 14rpx 14rpx 0;
+  padding: 12rpx 20rpx;
+  background: #f3f4f6;
+  border: 1rpx solid transparent;
+  border-radius: 30rpx;
+  font-size: 24rpx;
+  color: #4b5563;
+}
+
+.chip-active {
+  background: #ecfdf5;
+  border-color: #86efac;
+  color: #0E9F6E;
+}
+
+.chip-check {
+  transform: scale(0.75);
+  margin-right: 6rpx;
+}
+
+.privacy-tip {
+  margin: 24rpx 40rpx 0;
+  font-size: 24rpx;
+  color: #9ca3af;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.submit-bar {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  padding: 18rpx 32rpx calc(18rpx + env(safe-area-inset-bottom));
+  box-shadow: 0 -6rpx 24rpx rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  z-index: 20;
+}
+
+.submit-hint {
+  flex: 1;
+  margin-right: 20rpx;
+  font-size: 22rpx;
+  color: #9ca3af;
+}
+
+.submit-btn {
+  flex: 0 0 280rpx;
+  height: 84rpx;
+  line-height: 1;
+  border-radius: 42rpx;
+  background: linear-gradient(135deg, #0E9F6E, #2F80ED);
+  color: #fff;
+  font-size: 30rpx;
+  font-weight: 600;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.submit-btn::after {
+  border: none;
+}

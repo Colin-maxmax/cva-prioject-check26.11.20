@@ -1,0 +1,135 @@
+<scroll-view scroll-y class="doc-page">
+  <view class="doc-title">版本更新公告</view>
+  <view class="doc-meta">卒防智控小程序</view>
+
+  <view class="version-item patch">
+    <view class="version-head">
+      <text class="version-badge">v2.5.1</text>
+      <text class="type-badge">修订补丁</text>
+      <text class="version-date">2026-11-19</text>
+    </view>
+    <view class="version-line">· 客服消息增加头像，方便区分用户与工作人员</view>
+    <view class="version-line">· 账号 ID 改为 CFZK 编号，按注册顺序排列</view>
+    <view class="version-line">· 更新《隐私政策》与《用户协议》，补充 AI 助手与头像昵称说明</view>
+  </view>
+
+  <view class="version-item minor">
+    <view class="version-head">
+      <text class="version-badge">v2.5.0</text>
+      <text class="type-badge">特征更新</text>
+      <text class="version-date">2026-11-18</text>
+    </view>
+    <view class="version-line">· 「我的」页面改版，顶部展示头像、昵称和账号信息</view>
+    <view class="version-line">· 支持选择微信头像或相册图片作为头像</view>
+    <view class="version-line">· 新增「账号资料」页，可修改头像与昵称</view>
+    <view class="version-line">· 微信登录后可一键完善微信头像与昵称</view>
+  </view>
+
+  <view class="version-item minor">
+    <view class="version-head">
+      <text class="version-badge">v2.4.0</text>
+      <text class="type-badge">特征更新</text>
+      <text class="version-date">2026-11-18</text>
+    </view>
+    <view class="version-line">· 新增 AI 健康助手，可就健康生活方式、饮食运动等问题提问</view>
+    <view class="version-line">· AI 回答会自动参考你最近一次评估的信息</view>
+    <view class="version-line">· AI 对话支持历史记录，可新建多个会话</view>
+    <view class="version-line">· AI 回答逐字显示，阅读更自然</view>
+    <view class="version-line">· 首页新增 AI 健康助手入口</view>
+  </view>
+
+  <view class="version-item patch">
+    <view class="version-head">
+      <text class="version-badge">v2.3.1</text>
+      <text class="type-badge">修订补丁</text>
+      <text class="version-date">2026-11-17</text>
+    </view>
+    <view class="version-line">· 客服消息显示发送人名称，区分用户与工作人员</view>
+    <view class="version-line">· 登录会话调整为 6 小时，退出小程序后需重新登录</view>
+  </view>
+
+  <view class="version-item minor">
+    <view class="version-head">
+      <text class="version-badge">v2.3.0</text>
+      <text class="type-badge">特征更新</text>
+      <text class="version-date">2026-11-16</text>
+    </view>
+    <view class="version-line">· 评估结果与历史详情支持语音播报，方便老年用户</view>
+    <view class="version-line">· 历史详情补充显示健康建议，与播报内容一致</view>
+    <view class="version-line">· 支持生成评估报告图片，保存到相册后可自行打印</view>
+    <view class="version-line">· 健康知识、急救指南板块暂时下线，敬请期待</view>
+  </view>
+
+  <view class="version-item minor">
+    <view class="version-head">
+      <text class="version-badge">v2.2.0</text>
+      <text class="type-badge">特征更新</text>
+      <text class="version-date">2026-11-09</text>
+    </view>
+    <view class="version-line">· 新增在线客服，可在小程序内直接留言咨询</view>
+    <view class="version-line">· 客服回复后「我的」页面显示未读提醒</view>
+    <view class="version-line">· 新增使用情况统计，用于优化服务</view>
+  </view>
+
+  <view class="version-item patch">
+    <view class="version-head">
+      <text class="version-badge">v2.1.1</text>
+      <text class="type-badge">修订补丁</text>
+      <text class="version-date">2026-11-09</text>
+    </view>
+    <view class="version-line">· 修正评估时间的时区偏差，日期与时间显示更准确</view>
+    <view class="version-line">· 历史记录的评估时间精确到分钟</view>
+    <view class="version-line">· 心脏病选择「其他」时可填写具体类型</view>
+  </view>
+
+  <view class="version-item minor">
+    <view class="version-head">
+      <text class="version-badge">v2.1.0</text>
+      <text class="type-badge">特征更新</text>
+      <text class="version-date">2026-11-07</text>
+    </view>
+    <view class="version-line">· 接入随机森林风险预测模型，风险评估更准确</view>
+    <view class="version-line">· 评估结果只保留患病概率，移除风险分数</view>
+    <view class="version-line">· 评估问卷职业、婚姻、学历、收入选项与医学模型对齐</view>
+    <view class="version-line">· 病史区改为「高危因素（8+2）」，按卒中筛查要点重新编排</view>
+    <view class="version-line">· 问卷新增医疗费用承担方式，身高体重改为必填并自动计算 BMI</view>
+    <view class="version-line">· 填写过的姓名自动带出上次基本信息，方便每日复测</view>
+  </view>
+
+  <view class="version-item major">
+    <view class="version-head">
+      <text class="version-badge">v2.0.0</text>
+      <text class="type-badge">版本升级</text>
+      <text class="version-date">2026-11-05</text>
+    </view>
+    <view class="version-line">· 新增登录、注册、忘记密码、用户协议与隐私政策</view>
+    <view class="version-line">· 底部导航调整为首页 / 报告 / 我的</view>
+    <view class="version-line">· 首页改版：快捷入口、上次评估、健康知识</view>
+    <view class="version-line">· 新增健康报告、健康知识、急救指南页面</view>
+    <view class="version-line">· 补充医疗免责声明和 120 急救提示</view>
+  </view>
+
+  <view class="version-item minor">
+    <view class="version-head">
+      <text class="version-badge">v1.1.0</text>
+      <text class="type-badge">特征更新</text>
+      <text class="version-date">2026-10-29</text>
+    </view>
+    <view class="version-line">· 接入 CloudBase 云端账号与评估数据</view>
+    <view class="version-line">· 小程序提交的评估可同步到医生端网站</view>
+    <view class="version-line">· 管理员可查看全部评估，普通用户只看自己的记录</view>
+    <view class="version-line">· 网站和小程序统一评分口径</view>
+    <view class="version-line">· 支持旧版本本机记录迁移</view>
+  </view>
+
+  <view class="version-item major">
+    <view class="version-head">
+      <text class="version-badge">v1.0.0</text>
+      <text class="type-badge">版本升级</text>
+      <text class="version-date">2026-01</text>
+    </view>
+    <view class="version-line">· 初版风险评估、结果页和历史记录</view>
+  </view>
+
+  <view class="doc-p" style="margin-top: 30rpx; color: #9ca3af; font-size: 24rpx;">版本更新不会删除你的云端评估记录。清空记录请谨慎操作。</view>
+</scroll-view>

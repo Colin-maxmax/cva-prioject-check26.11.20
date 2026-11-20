@@ -1,0 +1,142 @@
+<view class="history-page">
+  <view class="page-header">
+    <view class="header-info">
+      <view class="page-title">评估记录</view>
+      <view class="page-sub">共 {{total}} 条评估 · 高风险 {{highCount}} 条</view>
+    </view>
+    <view class="export-btn" bindtap="exportExcel">导出 Excel</view>
+  </view>
+
+  <view wx:if="{{loading}}" class="state">加载中...</view>
+
+  <block wx:else>
+    <view wx:if="{{offline}}" class="offline-tip">网络异常，显示本机缓存</view>
+
+    <view class="filter-row" wx:if="{{assessments.length > 0}}">
+      <view
+        class="filter-chip {{filter === item ? 'active' : ''}}"
+        wx:for="{{filters}}"
+        wx:key="*this"
+        bindtap="setFilter"
+        data-level="{{item}}"
+      >{{item}}</view>
+    </view>
+
+    <view
+      class="record-card {{item.riskTone}}"
+      wx:for="{{filtered}}"
+      wx:key="id"
+      bindtap="viewDetail"
+      data-index="{{index}}"
+    >
+      <view class="record-top">
+        <view class="record-name">{{item.patientName || '未命名'}}</view>
+        <view class="risk-badge {{item.riskTone}}">{{item.riskLevel || '未分级'}}</view>
+      </view>
+      <view class="record-meta">
+        <text>{{item.age || '--'}}岁 / {{item.gender || '--'}}</text>
+        <view class="meta-right">
+          <text>{{item.dateShort}}</text>
+          <text class="record-delete" catchtap="deleteRecord" data-index="{{index}}">删除</text>
+        </view>
+      </view>
+      <view class="record-bottom">
+        <view class="record-metrics">
+          <text class="metric">概率 {{item.probability || '--'}}%</text>
+        </view>
+        <view class="source-badge {{item.sourceClass}}">{{item.sourceLabel}}</view>
+        <text class="chevron">›</text>
+      </view>
+    </view>
+
+    <view wx:if="{{filtered.length === 0}}" class="empty-card">
+      <view class="empty-icon">记</view>
+      <view class="empty-title">{{assessments.length === 0 ? '还没有评估记录' : '当前筛选下没有记录'}}</view>
+      <view class="empty-desc">{{assessments.length === 0 ? '完成一次脑卒中风险自测后，记录会显示在这里。' : '换一个风险等级看看。'}}</view>
+      <view wx:if="{{assessments.length === 0}}" class="empty-action" bindtap="goAssessment">开始评估 ›</view>
+    </view>
+
+    <view wx:if="{{legacyCount > 0}}" class="legacy-card">
+      <view class="legacy-icon">旧</view>
+      <view class="legacy-info">
+        <view class="legacy-title">检测到本机旧记录 {{legacyCount}} 条</view>
+        <view class="legacy-desc" wx:if="{{canImportLegacy}}">可以导入云端，重复导入会自动跳过。</view>
+        <view class="legacy-desc" wx:else>当前是账号密码登录，请退出后用微信登录再导入，避免归属错误。</view>
+      </view>
+      <button wx:if="{{canImportLegacy}}" class="legacy-btn" bindtap="importLegacy">导入</button>
+    </view>
+
+    <view wx:if="{{assessments.length > 0}}" class="danger-row" bindtap="clearHistory">清空历史记录</view>
+    <view wx:if="{{assessments.length > 0}}" class="danger-tip">清空会同时删除云端记录，无法恢复。</view>
+  </block>
+
+  <view wx:if="{{showDetail && detail}}" class="detail-mask" bindtap="closeDetail">
+    <view class="detail-sheet" catchtap="noop">
+      <view class="detail-head">
+        <view class="detail-head-info">
+          <view class="detail-name">{{detail.patientName || '未命名'}}</view>
+          <view class="detail-meta">{{detail.age || '--'}}岁 / {{detail.gender || '--'}} · {{detail.dateShort}}</view>
+        </view>
+        <view class="detail-close" bindtap="closeDetail">×</view>
+      </view>
+
+      <scroll-view scroll-y class="detail-body">
+        <view class="detail-risk-card {{detail.riskTone}}">
+          <view class="detail-risk-label">风险等级</view>
+          <view class="detail-risk-level {{detail.riskTone}}">{{detail.riskLevel}}</view>
+          <view class="detail-metrics">
+            <view class="detail-metric">
+              <view class="dm-value">{{detail.probability || '--'}}%</view>
+              <view class="dm-label">患病概率</view>
+            </view>
+          </view>
+        </view>
+
+        <view class="detail-section">
+          <view class="detail-section-title">主要风险因素</view>
+          <view class="detail-factors" wx:if="{{detail.riskFactors.length > 0}}">
+            <text class="detail-factor" wx:for="{{detail.riskFactors}}" wx:key="*this">{{item}}</text>
+          </view>
+          <view wx:else class="detail-muted">未发现明显风险因素</view>
+        </view>
+
+        <view class="detail-section" wx:if="{{detailAdvice}}">
+          <view class="detail-section-title">健康建议</view>
+          <view class="detail-advice">{{detailAdvice}}</view>
+        </view>
+
+        <view class="detail-section">
+          <view class="detail-section-title">记录信息</view>
+          <view class="detail-row">
+            <text class="dr-label">来源</text>
+            <text class="dr-value">{{detail.sourceLabel}}</text>
+          </view>
+          <view class="detail-row">
+            <text class="dr-label">评估人员</text>
+            <text class="dr-value">{{detail.assessedBy || detail.ownerName || '--'}}</text>
+          </view>
+          <view class="detail-row">
+            <text class="dr-label">评估时间</text>
+            <text class="dr-value">{{detail.dateTime || detail.dateShort}}</text>
+          </view>
+          <view class="detail-row" wx:if="{{detail.notes}}">
+            <text class="dr-label">备注</text>
+            <text class="dr-value">{{detail.notes}}</text>
+          </view>
+        </view>
+
+        <view class="detail-disclaimer">结果仅供参考，不构成医疗诊断。</view>
+
+        <view class="detail-tools">
+          <button class="detail-tool-btn" bindtap="speakDetail">{{speaking ? '停止播报' : '语音播报'}}</button>
+          <button class="detail-tool-btn" bindtap="saveDetailReport">保存报告</button>
+        </view>
+
+        <view class="detail-actions">
+          <button class="detail-delete-btn" bindtap="deleteDetail">删除这条记录</button>
+          <button class="detail-close-btn" bindtap="closeDetail">关闭</button>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+</view>

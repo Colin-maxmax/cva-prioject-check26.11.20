@@ -1,0 +1,38 @@
+<scroll-view scroll-y class="doc-page">
+  <view class="doc-title">用户协议</view>
+  <view class="doc-meta">更新日期：2026-11-18</view>
+
+  <view class="doc-section">一、服务说明</view>
+  <view class="doc-p">本小程序“卒防智控”提供脑卒中健康风险自测、风险因素提示、评估报告、AI 健康问答与在线客服等服务。评估结果和 AI 回答仅供参考，不构成医疗诊断，不能替代专业医生的判断。如出现突然口角歪斜、肢体无力、言语不清等症状，请立即拨打 120。</view>
+
+  <view class="doc-section">二、使用条件</view>
+  <view class="doc-p">本小程序适用于 18 周岁以上人群。用户应如实填写年龄、病史、血压、血糖等信息；因填写错误信息导致的评估偏差，由用户自行承担。</view>
+
+  <view class="doc-section">三、账号与安全</view>
+  <view class="doc-p">账号密码由用户自行保管。如发现账号异常，请发送邮件至 3063298546@qq.com。用户不得利用本小程序从事任何违法或侵害他人权益的活动。</view>
+  <view class="doc-p">用户设置的头像和昵称不得包含违法、暴力、色情、侮辱性或侵犯他人权益的内容。如发现违规，我们有权修改或清除相关内容。</view>
+
+  <view class="doc-section">四、AI 健康助手</view>
+  <view class="doc-p">AI 回答由大模型自动生成，可能存在错误、遗漏或不适用于你个人情况的内容，请自行判断，不要将其作为诊断、用药或急救依据。</view>
+  <view class="doc-p">请勿在提问中输入身份证号、银行卡号、密码等敏感信息。AI 对话仅保存在你的手机本地，你可以随时新建对话或清除记录。</view>
+  <view class="doc-p">我们可能根据服务情况调整或暂停 AI 功能，届时会在小程序内公告。</view>
+
+  <view class="doc-section">五、数据与隐私</view>
+  <view class="doc-p">我们收集的信息、使用目的、存储方式和用户权利，详见《隐私政策》。数据存储于腾讯云开发 CloudBase（中国境内），仅用户本人及授权管理员可访问。</view>
+
+  <view class="doc-section">六、免责声明</view>
+  <view class="doc-p">因用户提供错误信息、网络故障、设备故障、不可抗力或其他非开发者原因导致的后果，开发者不承担超出法律规定的责任。本小程序不提供急救服务，紧急情况请直接联系医疗机构。</view>
+  <view class="doc-p">AI 服务依赖第三方大模型，可能因网络或服务商原因中断；AI 输出内容不代表开发者意见，因使用 AI 回答产生的后果由用户自行判断和承担。</view>
+
+  <view class="doc-section">七、知识产权</view>
+  <view class="doc-p">本小程序的界面、文字、评分规则等内容归开发者所有。未经许可，不得复制、传播或用于商业用途。</view>
+
+  <view class="doc-section">八、协议变更</view>
+  <view class="doc-p">开发者可能根据法律法规或服务变化更新本协议。更新后将在小程序内公布，继续使用视为同意更新后的协议。</view>
+
+  <view class="doc-section">九、联系我们</view>
+  <view class="doc-p">如需行使个人信息权利、咨询本协议或反馈问题，请发送邮件至：</view>
+  <text class="agreement-email" selectable="true">3063298546@qq.com</text>
+  <view class="copy-email" bindtap="copyEmail">复制邮箱</view>
+  <view class="doc-p">我们将在 15 个工作日内处理。</view>
+</scroll-view>

@@ -1,0 +1,30 @@
+@import "../agreement/agreement.wxss";
+
+.faq-item {
+  background: #fff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin-bottom: 20rpx;
+  box-shadow: 0 3rpx 14rpx rgba(15, 23, 42, 0.03);
+}
+
+.faq-q {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: #0E9F6E;
+  line-height: 1.5;
+}
+
+.faq-a {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #6b7280;
+  line-height: 1.7;
+}
+
+.faq-tip {
+  text-align: center;
+  font-size: 22rpx;
+  color: #9ca3af;
+  line-height: 1.6;
+}

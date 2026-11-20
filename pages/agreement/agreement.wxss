@@ -1,0 +1,51 @@
+.doc-page {
+  height: 100vh;
+  padding: 40rpx 40rpx 80rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+
+.doc-title {
+  font-size: 40rpx;
+  font-weight: 700;
+  color: #1f2937;
+  margin-bottom: 12rpx;
+}
+
+.doc-meta {
+  font-size: 24rpx;
+  color: #9ca3af;
+  margin-bottom: 32rpx;
+}
+
+.doc-section {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: #0E9F6E;
+  margin: 32rpx 0 12rpx;
+}
+
+.doc-p {
+  font-size: 28rpx;
+  color: #4b5563;
+  line-height: 1.8;
+}
+
+.agreement-email {
+  display: block;
+  margin: 12rpx 0 10rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #2F80ED;
+  word-break: break-all;
+}
+
+.copy-email {
+  display: inline-block;
+  margin-bottom: 12rpx;
+  padding: 8rpx 18rpx;
+  border-radius: 20rpx;
+  background: #eff6ff;
+  color: #2F80ED;
+  font-size: 24rpx;
+}

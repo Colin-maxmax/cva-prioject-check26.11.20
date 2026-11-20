@@ -1,0 +1,41 @@
+<view class="login-page">
+  <view class="brand">
+    <image wx:if="{{!logoError}}" class="logo-img" src="/images/logo.png" mode="aspectFit" binderror="onLogoError"></image>
+    <view wx:else class="logo">卒</view>
+    <view class="title">创建账号</view>
+    <view class="subtitle">注册后可跨设备查看评估记录</view>
+  </view>
+
+  <view class="card">
+    <view class="field">
+      <text class="label">账号</text>
+      <input class="input" value="{{username}}" placeholder="3-32 位中英文、数字或下划线" maxlength="32" bindinput="onUsernameInput" />
+    </view>
+
+    <view class="field">
+      <text class="label">密码</text>
+      <input class="input" password="{{true}}" value="{{password}}" placeholder="至少 6 位" maxlength="64" bindinput="onPasswordInput" />
+    </view>
+
+    <view class="field">
+      <text class="label">确认密码</text>
+      <input class="input" password="{{true}}" value="{{confirmPassword}}" placeholder="请再次输入密码" maxlength="64" bindinput="onConfirmInput" />
+    </view>
+
+    <view class="links">
+      <text class="link" bindtap="goLogin">已有账号？去登录</text>
+    </view>
+
+    <view class="agreement" bindtap="toggleAgree">
+      <view class="check {{agreed ? 'checked' : ''}}">{{agreed ? '✓' : ''}}</view>
+      <text class="agreement-text">我已阅读并同意</text>
+      <text class="link" catchtap="openAgreement">《用户协议》</text>
+      <text class="agreement-text">与</text>
+      <text class="link" catchtap="openPrivacy">《隐私政策》</text>
+    </view>
+
+    <button class="btn-primary" loading="{{submitting}}" disabled="{{submitting}}" bindtap="onSubmit">注册</button>
+  </view>
+
+  <view class="hint">如果你之前用微信登录填写过记录，请返回使用微信登录；注册新账号不会自动关联旧记录。</view>
+</view>
