@@ -45,6 +45,12 @@
           "selectedIconPath": "images/tab/report-active.png"
         },
         {
+          "pagePath": "pages/ai/ai",
+          "text": "AI助手",
+          "iconPath": "images/tab/ai.png",
+          "selectedIconPath": "images/tab/ai-active.png"
+        },
+        {
           "pagePath": "pages/my/my",
           "text": "我的",
           "iconPath": "images/tab/my.png",

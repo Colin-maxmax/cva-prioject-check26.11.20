@@ -30,15 +30,6 @@
     <view wx:else class="last-empty">还没有评估记录，点击开始第一次评估。</view>
   </view>
 
-  <view class="ai-entry" bindtap="goAi">
-    <view class="ai-entry-icon">AI</view>
-    <view class="ai-entry-info">
-      <view class="ai-entry-title">AI 健康助手</view>
-      <view class="ai-entry-desc">有健康方面的疑问，可以随时问我</view>
-    </view>
-    <view class="ai-entry-arrow">›</view>
-  </view>
-
   <view class="notice" bindtap="onNoticeTap">
     <text class="notice-icon {{currentNotice.tone}}">{{currentNotice.icon}}</text>
     <text class="notice-text">{{currentNotice.text}}</text>

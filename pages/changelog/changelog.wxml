@@ -9,6 +9,7 @@
       <text class="version-date">2026-11-19</text>
     </view>
     <view class="version-line">· 客服消息增加头像，方便区分用户与工作人员</view>
+    <view class="version-line">· AI 健康助手改为底部导航入口，首页不再单独展示</view>
     <view class="version-line">· 账号 ID 改为 CFZK 编号，按注册顺序排列</view>
     <view class="version-line">· 更新《隐私政策》与《用户协议》，补充 AI 助手与头像昵称说明</view>
   </view>

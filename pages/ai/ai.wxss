@@ -303,16 +303,16 @@ page {
 .input-bar {
   display: flex;
   align-items: center;
-  padding: 16rpx 24rpx;
-  padding-bottom: calc(16rpx + env(safe-area-inset-bottom));
+  padding: 12rpx 24rpx;
   background: #fff;
   box-shadow: 0 -4rpx 16rpx rgba(15, 23, 42, 0.04);
 }
 
 .input-box {
-  flex: 1;
+  width: 86%;
   height: 72rpx;
   padding: 0 24rpx;
+  box-sizing: border-box;
   background: #f3f5f9;
   border-radius: 36rpx;
   font-size: 27rpx;
@@ -320,14 +320,20 @@ page {
 }
 
 .send-btn {
-  margin-left: 16rpx;
+  width: 11%;
+  margin-left: 3%;
   height: 72rpx;
+  min-height: 72rpx;
   line-height: 72rpx;
-  padding: 0 34rpx;
+  padding: 0;
+  box-sizing: border-box;
   border-radius: 36rpx;
   background: #2F80ED;
   color: #fff;
-  font-size: 27rpx;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .send-btn[disabled] {

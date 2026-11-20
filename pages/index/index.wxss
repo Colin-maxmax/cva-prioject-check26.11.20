@@ -139,52 +139,6 @@ page {
   padding: 10rpx 0;
 }
 
-.ai-entry {
-  margin: 24rpx 32rpx 0;
-  padding: 24rpx 26rpx;
-  border-radius: 20rpx;
-  background: linear-gradient(135deg, #EEF5FF, #E3EEFF);
-  display: flex;
-  align-items: center;
-}
-
-.ai-entry-icon {
-  width: 78rpx;
-  height: 78rpx;
-  line-height: 78rpx;
-  border-radius: 22rpx;
-  background: linear-gradient(135deg, #2F80ED, #4F9DFF);
-  color: #fff;
-  font-size: 26rpx;
-  font-weight: 700;
-  text-align: center;
-  margin-right: 20rpx;
-  flex-shrink: 0;
-}
-
-.ai-entry-info {
-  flex: 1;
-  min-width: 0;
-}
-
-.ai-entry-title {
-  font-size: 29rpx;
-  font-weight: 600;
-  color: #1f2937;
-}
-
-.ai-entry-desc {
-  margin-top: 6rpx;
-  font-size: 23rpx;
-  color: #6b7280;
-}
-
-.ai-entry-arrow {
-  color: #2F80ED;
-  font-size: 34rpx;
-  flex-shrink: 0;
-}
-
 .notice {
   margin: 24rpx 32rpx 0;
   background: #fff8e1;

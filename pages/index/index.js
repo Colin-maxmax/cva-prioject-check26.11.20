@@ -188,7 +188,7 @@ Page({
   },
 
   goAi() {
-    wx.navigateTo({ url: '/pages/ai/ai' });
+    wx.switchTab({ url: '/pages/ai/ai' });
   },
 
   goFaq() {
